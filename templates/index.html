@@ -1,6 +1,6 @@
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>123</title>
+<title>測試匿名發文用表單</title>
 <style>
     textarea {
         width: 70%;
@@ -37,12 +37,12 @@
                     function check() {
                         var x = document.getElementById("message").value;
                         if (x == "請輸入匿名發文") {
-                            alert("請輸入內容!");
+                            alert("無法送出空白貼文!");
                             document.msgform.action = '/';
                             //return faluse;
 
                         } else if (x == "") {
-                            alert("請輸入內容!");
+                            alert("無法送出空白貼文!");
                             document.msgform.action = '/';
                             return faluse;
                         }
@@ -52,7 +52,7 @@
 
             </p>
             <p>
-                <input type="submit" name="send" value="送出匿名發文" onclick="check()">
+                <input type="submit" name="send" value="送出" onclick="check()">
 
             </p>
         </fieldset>
