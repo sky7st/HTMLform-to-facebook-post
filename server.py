@@ -20,15 +20,16 @@ def result():
     fullTime = time.strftime("%Y%m%d_%H%M%S")
     message = request.form.get('message')
     chdir = os.getcwd() 
-    with open(chdir+'/response/test.csv', 'w', newline='',encoding='utf-8') as file:  
-        csvCursor = csv.writer(file)
-        
-        csvHeader = ('time', 'message')
-        data = [csvHeader,(postTime, message)]
+    filename = fullTime + "_" + str(random.randint(0,99999)) + ".csv"
+    with open(chdir+'/response/' + filename, 'w', newline='',encoding='utf-8') as file:  
+        csvCursor = csv.writer(file)        
+
+        data = [(postTime, message)]
         for ls in data:
             csvCursor.writerow(ls)
 
     print("csv write")
     return render_template('result.html')
 if __name__ == '__main__':
+    print("server staring.....")
     app.run(host='0.0.0.0',threaded=True)
