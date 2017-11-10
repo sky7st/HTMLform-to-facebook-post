@@ -6,7 +6,6 @@ from flask import render_template
 from flask import request
 from config import DevConfig
 
-import fbmanage
 
 app = Flask(__name__)
 app.config.from_object(DevConfig)
