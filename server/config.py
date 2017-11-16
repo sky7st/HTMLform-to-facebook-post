@@ -1,9 +1,9 @@
 class Config(object):
-    pass
+    DEBUG = False
+    SQLALCHEMY_ECHO = False
+    PORT = 8080
 class ProdConfig(Config):
     pass
 class DevConfig(Config):
     DEBUG = True
 
-DEBUG = False
-SQLALCHEMY_ECHO = False

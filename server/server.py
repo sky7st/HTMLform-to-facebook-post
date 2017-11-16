@@ -4,11 +4,11 @@ import csv
 from flask import Flask
 from flask import render_template
 from flask import request
-from config import DevConfig
+from config import Config
 
 
 app = Flask(__name__)
-app.config.from_object(DevConfig)
+app.config.from_object(Config)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -31,4 +31,4 @@ def result():
     return render_template('result.html')
 if __name__ == '__main__':
     print("server staring.....")
-    app.run(host='0.0.0.0',threaded=True)
+    app.run(host='0.0.0.0', threaded=True, port=8080)
